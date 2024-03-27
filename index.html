@@ -47,8 +47,14 @@
             editBtn.className = "edit";
             editBtn.setAttribute("onclick", "editTask(this)");
 
+            var completedBtn = document.createElement("span");
+            completedBtn.innerHTML = "✅"; // Checkmark icon
+            completedBtn.className = "completed";
+            completedBtn.setAttribute("onclick", "markCompleted(this)");
+
             li.appendChild(deleteBtn);
             li.appendChild(editBtn);
+            li.appendChild(completedBtn);
 
             taskList.appendChild(li);
 
@@ -68,6 +74,11 @@
             if (newText !== null && newText.trim() !== "") {
                 li.firstChild.nodeValue = newText;
             }
+        }
+
+        function markCompleted(element) {
+            var li = element.parentElement;
+            li.classList.toggle("completed-task");
         }
     </script>
 </body>

@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #029ae0;
+    background-color: #f4f4f4;
 }
 
 .container {
@@ -51,30 +51,31 @@ li {
     position: relative;
 }
 
-li:hover .delete {
+li:hover .delete,
+li:hover .edit {
     display: inline-block;
 }
 
-.delete {
-    display: none;
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #f44336;
-}
-
+.delete,
 .edit {
     display: none;
     position: absolute;
     top: 50%;
-    right: 40px;
     transform: translateY(-50%);
     cursor: pointer;
+}
+
+.delete {
+    right: 10px;
+    color: #f44336;
+}
+
+.edit {
+    right: 40px;
     color: #2196f3;
 }
 
-li:hover .edit {
-    display: inline-block;
+.completed {
+    right: 70px;
+    color: #2ecc71;
 }
